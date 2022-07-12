@@ -21,7 +21,7 @@
 
 ### Локальный запуск проекта
 ```
-https://github.com/krestovsky13/test_iksvan
+git clone https://github.com/krestovsky13/test_iksvan
 docker-compose build
 docker-compose up -d
 ```
