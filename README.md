@@ -21,7 +21,7 @@
 
 ### Локальный запуск проекта
 ```
-git clone https://github.com/krestovsky13/Script-Google-API
+https://github.com/krestovsky13/test_iksvan
 docker-compose build
 docker-compose up -d
 ```
