@@ -1,0 +1,19 @@
+{% extends 'shortener/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+    <h2 class="display-6 fst-italic">Тестовое задание для "Иксван":</h2>
+    <p class="lead">Сервис включает в себя 4 страницы (не считая эту):
+    <ul class="lead">1. Страница регистрации пользователей</ul>
+    <ul class="lead">2. Страница авторизации пользователей</ul>
+    <ul class="lead">3. Страница для сокращения ссылок</ul>
+    <p class="lead my-1">Посетитель сайта вводит любой оригинальный URL-адрес в поле ввода
+        (http://example.com/verylongurl...)</p>
+    <p class="lead my-1">Нажимает кнопку "Сократить"</p>
+    <p class="lead my-1">В ответ получает уникальный короткий URL-адрес (http://yourdomain/8U7VuC)</p>
+    <p class="lead my-3">При решении не использовались внешние API. Короткий URL является уникальным, перенаправляет
+        на оригинальную ссылку и актуален навсегда.</p>
+    <ul class="lead">4. Страница просмотр списка сокращенных ссылок авторизованного пользователя</ul>
+</div>
+{% endblock %}

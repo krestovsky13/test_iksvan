@@ -1,0 +1,29 @@
+{% extends 'shortener/base.html' %}
+{% load static %}
+{% block title %}Shortener{% endblock %}
+{% block content %}
+<div class="text-center">
+    {% if user.is_authenticated %}
+    <form class="form-signin" method="post" action="{% url 'shortener' %}">
+        {% csrf_token %}
+        <h1 class="h3 mb-3 mt-3 font-weight-normal">Please enter your valid URL</h1>
+        <label for="inputURL" class="sr-only">URL</label>
+        {{ form.full_url }}
+        <button class="btn mt-2 btn-lg btn-primary btn-block" type="submit">Cut</button>
+        {% if url %}
+        <div class="alert alert-light" role="alert">
+            <h4 class="alert-heading">Your shorten url!</h4>
+            <div class="form-control">
+                <span class="input-group-text" id="basic-addon3">{{request.scheme}}://{{request.get_host}}/{{ url.short_url }}</span>
+            </div>
+        </div>
+        {% endif %}
+    </form>
+    {% else %}
+    <div class="alert alert-light alert-dismissible fade show" role="alert">
+        Please <a href="{% url 'signin' %}" class="alert-link">Login </a> or <a href="{% url 'signup' %}"
+        class="alert-link">Sign-up</a> to shorten the URL and view your already shortened URLS
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

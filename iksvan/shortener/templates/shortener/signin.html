@@ -1,0 +1,19 @@
+{% extends 'shortener/base.html' %}
+{% load static %}
+{% block title %}Signin{% endblock %}
+
+{% block content %}
+    <div class="text-center">
+
+        <form class="form-signin" method="post" action="{% url 'signin' %}">
+            {% csrf_token %}
+            <h1 class="h3 mb-3 mt-3 font-weight-normal">Please enter your username and password</h1>
+<!--            <label for="inputUsername" class="sr-only">URL</label>-->
+            {{ form.username }}
+<!--            <label for="inputPassword" class="sr-only">ShortURL</label>-->
+            {{ form.password }}
+            <button class="btn mt-2 btn-lg btn-primary btn-block" type="submit">Signin</button>
+        </form>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,23 @@
+<div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <img src="https://cdn.worldvectorlogo.com/logos/pycharm-1.svg" width="150" height="50" alt="logo">
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="{% url 'index' %}" class="nav-link px-4 text-dark">Home</a></li>
+        <li><a href="{% url 'shortener' %}" class="nav-link px-4 text-dark">Shorten the url</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'my_urls' %}" class="nav-link px-4 text-dark">My URLs</a></li>
+        {% endif %}
+      </ul>
+
+      <div class="col-md-0 text-end">
+        {% if user.is_authenticated %}
+          <span class="navbar-text mr-2">Welcome, {{ user.get_username }}</span>
+          <a href="{% url 'logout' %}" class="btn btn-sm btn-outline-secondary">Logout</a>
+        {% else %}
+          <a href="{% url 'signin' %}" class="btn btn-sm btn-outline-secondary">Login</a>
+          <a href="{% url 'signup' %}" class="btn btn-sm btn-outline-secondary">Sign-up</a>
+        {% endif %}
+      </div>
+    </header>
+  </div>
