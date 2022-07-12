@@ -19,6 +19,13 @@
 
 ### Деплой - http://krestvsky13.pythonanywhere.com/
 
+### Локальный запуск проекта
+```
+git clone https://github.com/krestovsky13/Script-Google-API
+docker-compose build
+docker-compose up -d
+```
+
 ## MySQL 8.0
 
 ### Имеется урезанная БД букмекерской конторы, в которой имеются следующие таблицы:
